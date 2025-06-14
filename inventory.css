@@ -1,0 +1,242 @@
+body{
+    border-radius:0px;
+    font-family: "Roboto Condensed", serif;
+}
+
+
+.roboto-condensed {
+    font-family: "Roboto Condensed", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.bg-custom {
+    background-color: #ffffff; 
+    border-radius: 4px;
+}
+
+/* #dashboard-container{
+    background-color: #ebeced;
+    height:100vh;
+} */
+
+/* Sidebar Styling */
+#sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    color: #343a40;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: all 0.3s ease;
+    font-family: "Roboto Condensed", serif;
+}
+
+/* Adjust main content */
+#main-content {
+    background-color: #ebeced;
+    margin-left: 250px;
+    height:100vh;
+    width: calc(100% - 250px);
+    transition: all 0.3s ease;
+    font-family: "Roboto Condensed", serif;
+}
+
+/* Hide sidebar */
+.collapsed #sidebar {
+    left: -250px;
+}
+
+.collapsed #main-content {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* Hide toggle button when sidebar is open */
+.collapsed #menu-toggle {
+    display: block;
+}
+
+#menu-toggle {
+    position: inline;
+    left: 10px;
+    top: 10px;
+    z-index: 1000;
+}
+
+.link-hover:hover {
+    background-color: #d7dff8!important;
+    color: #007bff!important;
+    border-radius:0%!important;
+}
+
+.link-hover:hover i.fas {
+    color: #007bff !important; 
+}
+
+.nav-link.active i.fas {
+    color: #ffffff !important; 
+}
+
+
+.nav-link.active {
+    background-color: #007bff !important;  /* Highlighted background color */
+    color: white !important;  /* Change text color to white */
+    border-radius:0%!important;
+}
+
+
+.dams{
+    color:#007bff;
+}
+
+#main-content .navbar {
+    margin: 0; /* Removes extra spacing */
+    
+}
+
+#dashboard-container {
+    height: 100vh; /* Ensures full height */
+    font-family: "Roboto Condensed", serif;
+}
+
+.mynav{
+    height:12%;
+    padding: 0.1em;
+}
+   
+#sidebar .nav-pills .nav-link {
+    font-size: 17px; /* Reduce font size */
+    color:#333444;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+i.fas{
+    color:#333444;
+}
+
+.username {
+    font: size 12px;
+}
+
+#sidebar .mt-auto {
+    margin-top: auto; /* Pushes Logout to the bottom */
+}
+
+
+
+.inventory-overview {
+display: flex;
+flex-direction: column;
+font-family: Inter, sans-serif;
+}
+
+.inventory-card {
+margin-top: 13px;
+border-radius: 8px;
+background-color: #fff;
+width: 100%;
+padding: 10px 16px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+}
+
+.inventory-content {
+display: flex;
+gap: 20px;
+align-items: flex-start; /* Align items to the top */
+margin-right: 65%;
+padding: 5px 0;
+}
+
+
+.inventory-column {
+display: flex;
+flex-direction: column;
+flex: 1; /* Make columns take equal width */
+text-align: center; /* Center-align text */
+}
+
+.inventory-title {
+color: var(--Grey-grey-800, #383e49);
+font-size: 20px;
+font-weight: 500;
+margin-bottom: 16px; /* Add spacing below the title */
+}
+
+.inventory-stats {
+display: flex;
+gap: 20px;
+align-items: center; /* Align stats and divider vertically */
+}
+
+.stat-group {
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+
+
+.stat-primary {
+color: var(--Primary-primary-500, #1570ef);
+font-size: 16px;
+font-weight: 600;
+}
+
+.stat-value {
+color: var(--Grey-grey-600, #5d6679);
+font-size: 24px;
+font-weight: 600;
+}
+
+.stat-period {
+color: var(--Grey-grey-400, #858d9d);
+font-size: 14px;
+font-weight: 400;
+}
+
+.divider-1 {
+    background-color: #f0f1f3; /* Divider color */
+    width: 2px; /* Full width for horizontal divider */
+    height: 80px; /* Thin horizontal line */
+    margin: 0 20px ;/* Add spacing above and below the divider */
+
+}
+
+.inventory-column:nth-child(3) .stat-primary {
+color: #e19133; /* Change to your desired color (e.g., orange) */
+}
+
+.total-assets {
+color: #e19133;
+font-size: 16px;
+font-weight: 600;
+}
+
+.chart-placeholder {
+background-color: #f0f1f3;
+width: 200px; /* Adjust width to match the image */
+height: 100px; /* Adjust height to match the image */
+border-radius: 8px; /* Add rounded corners */
+}
+
+
+.bg-white {
+    background-color: white;
+}
+.list-group-item {
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.asset-padding{
+    padding: 10px 16px;
+}
+
+

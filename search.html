@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Assets</title>
+    <link rel="stylesheet" href="inventory.css">
+    <!-- <link rel="stylesheet" href="/status_bar.css"> -->
+    <!-- <script src="status_bar.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div id="dashboard-container" class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar" class="d-flex flex-column   py-3 ">
+            <h4 class="dams ps-4 pt-4 mb-5"><b>DAMS</b></h4>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li><a href="../lab_assistant/lab_assistant.php" class="nav-link link-hover" id="dashboard-link"><i class="fas fa-home pe-2 ps-2"></i> Dashboard</a></li>
+                <li><a href="category.html" class="nav-link link-hover" id="inventory-link"><i class="fas fa-box pe-2 ps-2"></i> Inventory</a></li>
+                <li><a href="#" class="nav-link link-hover" id="requisition-link"><i class="fas fa-file-alt pe-2 ps-2"></i> Requisition</a></li>
+                <li><a href="#" class="nav-link link-hover" id="condemnation-link"><i class="fas fa-exclamation-triangle pe-2 ps-2"></i> Codemnation</a></li>
+                <li><a href="#" class="nav-link link-hover" id="maintenance-link"><i class="fas fa-wrench pe-2 ps-2"></i> Maintenance</a></li>
+            </ul>
+
+            <!-- <a href="sign_in.html" class="nav-link link-hover mt-auto ms-3 mb-4">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a> -->
+        </div>
+
+        
+        <!-- Main Content -->
+        <div id="main-content" class="container-fluid">
+            <div class="row mynav d-flex">
+                <nav class="navbar w-100 navbar-light bg-custom d-flex justify-content-between">
+                    <span class="ms-3" id="menu-toggle"><i class="fas fa-bars"></i></span>
+                    <input class="form-control w-50 " type="search"  placeholder="Search assets...">
+                    <div class="username">
+                        <i class="far fa-user"></i>
+                        <span class="ms-1 me-3">(Lab Assistant)</span>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- <h4 class="my-4 ms-3"><b>Inventory</b></h4> -->
+            <div class="row mt-3">
+
+                <h3>Filtered Assets</h3>
+                <div id="filter-summary" class="alert alert-info"></div>
+                <div id="filtered-results"></div>
+            
+    
+            </div>
+
+            <button class="btn btn-secondary mt-3" onclick="goBack()">⬅ Back</button>
+ 
+        </div>
+
+        
+    </div>
+
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+         document.getElementById("dashboard-container").classList.toggle("collapsed");
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll('.nav-link');
+        
+            // Get the last active link from localStorage
+            const activeLink = localStorage.getItem('activeLink');
+        
+            if (activeLink) {
+                // Remove active class from all links
+                links.forEach(link => link.classList.remove('active'));
+        
+                // Add active class to the stored active link
+                document.getElementById(activeLink)?.classList.add('active');
+            } else {
+                // If no stored active link, set Dashboard as default
+                document.getElementById('dashboard-link').classList.add('active');
+            }
+        
+            links.forEach(link => {
+                link.addEventListener('click', function () {
+                    // Remove active from all links
+                    links.forEach(link => link.classList.remove('active'));
+        
+                    // Add active class to clicked link
+                    this.classList.add('active');
+        
+                    // Store the clicked link's ID in localStorage
+                    localStorage.setItem('activeLink', this.id);
+                });
+            });
+        });
+    </script>
+     <script>
+        
+const one =document.querySelector(".one");
+const two =document.querySelector(".two");
+const three =document.querySelector(".three");
+const four =document.querySelector(".four");
+const five =document.querySelector(".five");
+const six =document.querySelector(".six");
+
+one.onclick =function(){
+    one.classList.add("active");
+    two.classList.remove("active");
+    three.classList.remove("active");
+    four.classList.remove("active");
+    five.classList.remove("active");
+    six.classList.remove("active");
+}
+
+two.onclick =function(){
+    one.classList.add("active");
+    two.classList.add("active");
+    three.classList.remove("active");
+    four.classList.remove("active");
+    five.classList.remove("active");
+    six.classList.remove("active");
+
+}
+
+three.onclick =function(){
+    one.classList.add("active");
+    two.classList.add("active");
+    three.classList.add("active");
+    four.classList.remove("active");
+    five.classList.remove("active");
+    six.classList.remove("active");
+}
+
+four.onclick =function(){
+    one.classList.add("active");
+    two.classList.add("active");
+    three.classList.add("active");
+    four.classList.add("active");
+    five.classList.remove("active");
+    six.classList.remove("active");
+}
+
+five.onclick =function(){
+    one.classList.add("active");
+    two.classList.add("active");
+    three.classList.add("active");
+    four.classList.add("active");
+    five.classList.add("active");
+    six.classList.remove("active");
+}
+
+six.onclick =function(){
+    one.classList.add("active");
+    two.classList.add("active");
+    three.classList.add("active");
+    four.classList.add("active");
+    five.classList.add("active");
+    six.classList.add("active");
+}
+
+     </script>
+
+<script>
+    function redirectToDetails(url) {
+        window.location.href = url;
+    }
+</script>
+
+
+<script>
+    function updateTotalAssets() {
+        fetch('fetch_total_assets.php')
+            .then(response => response.json())
+            .then(data => {
+                if (data.total_assets !== undefined) {
+                    document.getElementById('asset-count').textContent = data.total_assets;
+                } else {
+                    document.getElementById('asset-count').textContent = "Error";
+                }
+            })
+            .catch(error => {
+                document.getElementById('asset-count').textContent = "Error";
+                console.error("Error fetching total assets:", error);
+            });
+    }
+    
+    // Call function on page load and every 10 seconds
+    updateTotalAssets();
+    setInterval(updateTotalAssets, 10000);
+    </script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        const nameOfItem = localStorage.getItem("name_of_the_item") || "";
+        const billNo = localStorage.getItem("bill_no") || "";
+        const indentNo = localStorage.getItem("indent_no") || "";
+        const date = localStorage.getItem("date") || "";
+        const timeRange = localStorage.getItem("time_range") || "";
+        const timeUnit = localStorage.getItem("time_unit") || "";
+        const cid = localStorage.getItem("cid") || "";
+        const labId = localStorage.getItem("lab_id") || "";
+
+        document.getElementById("filter-summary").innerHTML = `<b>Filters Applied:</b><br>Item Name: ${nameOfItem} | Bill No: ${billNo} | Indent No: ${indentNo} | Date: ${date} | Range: ${timeRange} | Unit: ${timeUnit}`;
+        
+        const formData = new FormData();
+        formData.append("name_of_the_item", nameOfItem);
+        formData.append("bill_no", billNo);
+        formData.append("indent_no", indentNo);
+        formData.append("date", date);
+        formData.append("time_range", timeRange);
+        formData.append("time_unit", timeUnit);
+        formData.append("cid", cid);
+        formData.append("lab_id", labId);
+        
+        fetch("filter_asset.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("filtered-results").innerHTML = data;
+        })
+        .catch(error => console.error("Error fetching filtered data:", error));
+    });
+
+    function goBack() {
+        window.history.back();
+    }
+</script>
+ </body>
+</html>
