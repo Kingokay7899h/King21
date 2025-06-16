@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maintenance Module</title>
+  <link rel="stylesheet" href="maintenance.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>DAMS</h2>
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="inventory.html">Inventory</a></li>
+      <li><a href="procurement.html">Procurement</a></li>
+      <li><a href="condemnation.html">Condemnation</a></li>
+      <li class="active"><a href="maintenance.html">Maintenance</a></li>
+      <li><a href="student_issues.html">Student Issues</a></li>
+      <li><a href="logout.php">Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <h1>Maintenance Table</h1>
+    <button onclick="loadAlerts()" class="alert-btn">Show Alerts</button>
+
+    <table id="maintenanceTable">
+      <thead>
+        <tr>
+          <th>Lab ID</th>
+          <th>Item Name</th>
+          <th>Date</th>
+          <th>Last Maintenance</th>
+          <th>Maintenance Due</th>
+          <th>Service Provider</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="maintenanceBody"></tbody>
+    </table>
+
+    <h1 style="margin-top: 50px;">Maintenance Alerts</h1>
+    <table id="alertsTable" style="display: none;">
+      <thead>
+        <tr>
+          <th>Lab ID</th>
+          <th>Item Name</th>
+          <th>Date</th>
+          <th>Last Maintenance</th>
+          <th>Maintenance Due</th>
+          <th>Service Provider</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="alertsBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Edit Maintenance Info</h2>
+      <form id="editForm">
+        <input type="hidden" id="editItemId">
+        <label>Last Maintenance:</label>
+        <input type="date" id="editLastMaintenance" required>
+        <label>Maintenance Due:</label>
+        <input type="date" id="editMaintenanceDue" required>
+        <label>Service Provider:</label>
+        <input type="text" id="editServiceProvider" required>
+        <button type="submit">Update</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="maintenance.js"></script>
+</body>
+</html>
